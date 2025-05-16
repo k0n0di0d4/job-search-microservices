@@ -1,0 +1,70 @@
+services:
+  api_gateway:
+    build:
+      context: ./api_gateway
+    container_name: api_gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - identity_service
+      - job_listing_service
+    networks:
+      - app-network
+
+  identity_service:
+    build:
+      context: ./identity_service
+    container_name: identity_service
+    ports:
+      - "8081:8081"
+    environment:
+      - DATABASE_URL=jdbc:postgresql://identity_db:5432/identity_db
+      - DATABASE_USER=identity_user
+      - DATABASE_PASSWORD=identity_password
+    depends_on:
+      - identity_db
+    networks:
+      - app-network
+
+  identity_db:
+    image: postgres:15
+    container_name: identity_db
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=identity_db
+      - POSTGRES_USER=identity_user
+      - POSTGRES_PASSWORD=identity_password
+    networks:
+      - app-network
+
+  job_listing_service:
+    build:
+      context: ./job_listing_service
+    container_name: job_listing_service
+    ports:
+      - "8082:8082"
+    environment:
+      - DATABASE_URL=jdbc:postgresql://job_db:5432/job_db
+      - DATABASE_USER=job_user
+      - DATABASE_PASSWORD=job_password
+    depends_on:
+      - job_db
+    networks:
+      - app-network
+
+  job_db:
+    image: postgres:15
+    container_name: job_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=job_user
+      - POSTGRES_PASSWORD=job_password
+      - POSTGRES_DB=job_db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

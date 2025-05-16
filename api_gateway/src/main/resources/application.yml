@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: identity_service
+          uri: http://identity-service.defaults.svc.cluster.local:8081
+          predicates:
+            - Path=/auth/**
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web.reactive.DispatcherHandler: TRACE
+    reactor.netty.http.client: DEBUG
+
