@@ -7,6 +7,3 @@ mvn clean package
 
 cd ../api_gateway
 mvn clean package
-
-cd ../service_registry
-mvn clean package

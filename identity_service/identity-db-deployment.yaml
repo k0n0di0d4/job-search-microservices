@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identity-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: identity-db
+  template:
+    metadata:
+      labels:
+        app: identity-db
+    spec:
+      containers:
+        - name: identity-db
+          image: postgres:15
+          env:
+            - name: POSTGRES_DB
+              value: identity_db
+            - name: POSTGRES_USER
+              value: identity_user
+            - name: POSTGRES_PASSWORD
+              value: identity_password
+          ports:
+            - containerPort: 5432

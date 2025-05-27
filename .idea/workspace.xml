@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a494476-d4fb-40ae-8e01-a0a66fc2e72d" name="Changes" comment="" />
+    <list default="true" id="9a494476-d4fb-40ae-8e01-a0a66fc2e72d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api_gateway/api-gateway-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateway/api-gateway-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity_service/identity-db-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity_service/identity-db-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity_service/identity-service-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity_service/identity-service-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/job-db-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/job-db-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/job-service-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/job-service-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/src/main/java/org/filipscode/api_gateway/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/src/main/java/org/filipscode/api_gateway/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/src/main/java/org/filipscode/api_gateway/filter/LoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/src/main/java/org/filipscode/api_gateway/filter/LoggingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity_service/src/main/java/org/filipscode/identity_service/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity_service/src/main/java/org/filipscode/identity_service/config/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity_service/src/main/java/org/filipscode/identity_service/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity_service/src/main/java/org/filipscode/identity_service/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/identity_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar_creation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/jar_creation.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/JobController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job_listing_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/job_listing_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.zip" beforeDir="false" afterPath="$PROJECT_DIR$/package.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebuild.sh" beforeDir="false" afterPath="$PROJECT_DIR$/rebuild.sh" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +42,24 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;k0n0di0d4&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/k0n0di0d4/job-search-microservices.git&quot;,
+    &quot;accountId&quot;: &quot;238b845b-d6a1-4659-8468-7cc748325e8e&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/api_gateway/api-gateway-service.yaml" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -26,6 +69,7 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2suO3l3ups8B9q9S3xhPHDfCe7O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,9 +81,11 @@
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.IdentityServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.JobListingServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Filiop/IdeaProjects/job-search-microservices/identity_service/src/main/java/org/filipscode/identity_service&quot;,
@@ -59,6 +105,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Filiop\IdeaProjects\job-search-microservices\identity_service\src\main\java\org\filipscode\identity_service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Filiop\IdeaProjects\job-search-microservices\identity_service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -144,6 +193,12 @@
       <workItem from="1747134551170" duration="33673000" />
       <workItem from="1747240773518" duration="9480000" />
       <workItem from="1747300801280" duration="9284000" />
+      <workItem from="1747392794926" duration="2013000" />
+      <workItem from="1747566990639" duration="2074000" />
+      <workItem from="1747571200247" duration="2154000" />
+      <workItem from="1747576651481" duration="866000" />
+      <workItem from="1747743038916" duration="23473000" />
+      <workItem from="1747778286338" duration="438000" />
     </task>
     <servers />
   </component>

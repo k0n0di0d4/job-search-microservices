@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: job-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: job-db
+  template:
+    metadata:
+      labels:
+        app: job-db
+    spec:
+      containers:
+        - name: job-db
+          image: postgres:15
+          env:
+            - name: POSTGRES_DB
+              value: job_db
+            - name: POSTGRES_USER
+              value: job_user
+            - name: POSTGRES_PASSWORD
+              value: job_password
+          ports:
+            - containerPort: 5432

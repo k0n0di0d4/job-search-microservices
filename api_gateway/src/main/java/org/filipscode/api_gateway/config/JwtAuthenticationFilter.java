@@ -2,6 +2,7 @@ package org.filipscode.api_gateway.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -23,13 +24,13 @@ public class JwtAuthenticationFilter implements WebFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
-        String authHeader = exchange.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
-
-        // If missing or invalid
-        if(authHeader == null || !authHeader.startsWith("Bearer ")) {
-            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return exchange.getResponse().setComplete();
+        String path = exchange.getRequest().getPath().toString();
+        if (path.startsWith("/auth")) {
+            return chain.filter(exchange);
         }
+
+
+        String authHeader = exchange.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
 
         String token = authHeader.substring(7);
 
@@ -50,7 +51,7 @@ public class JwtAuthenticationFilter implements WebFilter {
                     .header("X-Auth-Roles", claims.get("roles").toString())
                     .build();
         } catch (Exception e) {
-            log.error("Invalid JWT token", e.getMessage());
+            log.error("Invalid JWT token werhwie", e.getMessage());
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
             return exchange.getResponse().setComplete();
         }

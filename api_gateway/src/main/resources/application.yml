@@ -5,9 +5,14 @@ spring:
     gateway:
       routes:
         - id: identity_service
-          uri: http://identity-service.defaults.svc.cluster.local:8081
+          uri: http://identity-service.default.svc.cluster.local:8081
           predicates:
             - Path=/auth/**
+
+        - id: job_service
+          uri: http://job-service.default.svc.cluster.local:8082
+          predicates:
+            - Path=/job/**
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
