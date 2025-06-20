@@ -19,3 +19,5 @@ logging:
     org.springframework.web.reactive.DispatcherHandler: TRACE
     reactor.netty.http.client: DEBUG
 
+jwt:
+  public-key: classpath:keys/public.pem
