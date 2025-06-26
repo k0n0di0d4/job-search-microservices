@@ -13,6 +13,18 @@ spring:
           uri: http://job-service.default.svc.cluster.local:8082
           predicates:
             - Path=/job/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowed-origins: "http://localhost:30080"
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG

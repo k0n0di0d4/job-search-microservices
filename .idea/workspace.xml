@@ -4,14 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a494476-d4fb-40ae-8e01-a0a66fc2e72d" name="Changes" comment="Kubernetes and various minor changes">
-      <change afterPath="$PROJECT_DIR$/identity_service/src/main/resources/keys/public.pem" afterDir="false" />
+    <list default="true" id="9a494476-d4fb-40ae-8e01-a0a66fc2e72d" name="Changes" comment="Fixed the way jwt token authentication and authorization is working.">
+      <change afterPath="$PROJECT_DIR$/frontend.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/frontend-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/frontend-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/auth/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/auth/Register.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/auth/RequireAuth.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/job/JobList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/CreateJobDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/Job.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/JobDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/JobRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/JobService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/JobType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job_listing_service/src/main/resources/keys/public.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_gateway/src/main/java/org/filipscode/api_gateway/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/src/main/java/org/filipscode/api_gateway/config/JwtAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity_service/src/main/java/org/filipscode/identity_service/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity_service/src/main/java/org/filipscode/identity_service/config/JwtService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identity_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/identity_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job_listing_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/job_listing_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/job_listing_service/src/main/java/org/filipscode/job_listing_service/job/JobController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job_listing_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/job_listing_service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.zip" beforeDir="false" afterPath="$PROJECT_DIR$/package.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebuild.sh" beforeDir="false" afterPath="$PROJECT_DIR$/rebuild.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zip-folder.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/zip-folder.ps1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Dockerfile" />
         <option value="Class" />
       </list>
     </option>
@@ -47,6 +69,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -78,12 +103,14 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Users/Filiop/AppData/Roaming/JetBrains/IntelliJIdea2024.3/node/versions/22.17.0/node",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -143,6 +170,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.IdentityServiceApplication" />
@@ -192,7 +223,10 @@
       <workItem from="1748548008393" duration="2149000" />
       <workItem from="1748703949915" duration="3132000" />
       <workItem from="1750172031594" duration="3215000" />
-      <workItem from="1750428783880" duration="10568000" />
+      <workItem from="1750428783880" duration="23219000" />
+      <workItem from="1750853832483" duration="6159000" />
+      <workItem from="1750885269775" duration="6825000" />
+      <workItem from="1750941373021" duration="11388000" />
     </task>
     <task id="LOCAL-00001" summary="Kubernetes and various minor changes">
       <option name="closed" value="true" />
@@ -202,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748375268019</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed the way jwt token authentication and authorization is working.">
+      <option name="closed" value="true" />
+      <created>1750447534590</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750447534591</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +252,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Kubernetes and various minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kubernetes and various minor changes" />
+    <MESSAGE value="Fixed the way jwt token authentication and authorization is working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the way jwt token authentication and authorization is working." />
   </component>
 </project>

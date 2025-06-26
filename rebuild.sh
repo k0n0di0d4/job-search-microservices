@@ -16,12 +16,14 @@ wait
 docker push filipbruh/api-gateway:latest &
 docker push filipbruh/identity-service:latest &
 docker push filipbruh/job-service:latest &
+docker push filipbruh/frontend:latest &
 wait
 
 # 3. Restart deployments in parallel (local dev, no push needed)
 kubectl rollout restart deployment/api-gateway &
 kubectl rollout restart deployment/identity-service &
 kubectl rollout restart deployment/job-service &
+kubectl rollout restart deployment/frontend &
 wait
 
 echo "Code, images, and deployments updated."
